@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="css/style.css">
   <title>Vertical Slider</title>
 </head>
 <body>
-  
+
+  <div class="slider">
+    <div class="slider__container">
+
+      <div class="slider__slide-left" id="slide-left">
+        <div class="slider__item-left" style="background-color: #5B5243">
+          <h1>Есть методы для инь</h1>
+          <p>есть методы для ян</p>
+        </div>
+        
+
+        <div class="slider__item-left" style="background-color:  	#c96c28">
+          <h1>Кулак идёт</h1>
+          <p>одной нитью</p>
+        </div>
+
+        <div class="slider__item-left" style="background-color: #15363F">
+          <h1>У кулака есть форма</h1>
+          <p>у удара нет формы</p>
+        </div>
+
+        <div class="slider__item-left" style="background-color: #CC2222">
+          <h1>Внешне свиреп</h1>
+          <p>внутри спокоен</p>
+        </div>
+      </div>
+
+      <div class="slider__slide-right" id="slide-right">
+        <div class="slider__item-right" style="background-image: url('img/slide-1.png');"></div>
+        <div class="slider__item-right" style="background-image: url('img/slide-2.jpg');"></div>
+        <div class="slider__item-right" style="background-image: url('img/slide-3.png');"></div>
+        <div class="slider__item-right" style="background-image: url('img/slide-4.jpg');"></div>
+      </div>
+
+      <div class="slider__action-buttons">
+        <button class="slider__button slider__button-down">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button class="slider__button slider__button-up">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/index.js"></script>
 </body>
 </html>
