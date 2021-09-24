@@ -1,3 +1,5 @@
+"use strict";
+
 const sliderContainer = document.querySelector('.slider__container');
 const slideRight = document.querySelector('.slider__slide-right');
 const slideLeft = document.querySelector('.slider__slide-left');
@@ -8,7 +10,8 @@ const slidesLength = slideRight.querySelectorAll('div').length;
 const leftItems =  document.getElementById('slide-left');
 const rightItems =  document.getElementById('slide-right');
 
-const sliderHeight = sliderContainer.clientHeight;
+let sliderHeight = sliderContainer.clientHeight;
+
 let isEnabled = true;
 const slidesRight = document.getElementsByClassName('slider__item-right');
 const firstRight = slidesRight[0];
@@ -35,6 +38,16 @@ upButton.addEventListener('click', () => changeSlide ('up'));
 downButton.addEventListener('click', () => changeSlide ('down'));
 
 sliderContainer.addEventListener('mousewheel', onWheel);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  window.onresize = function() {
+    sliderHeight = sliderContainer.clientHeight;
+
+    slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
+    slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
+  };
+});
 
 function onWheel(e) {
   e = e || window.event;
@@ -68,6 +81,8 @@ const changeSlide = (direction) => {
 
   slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
   slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
+
+
   isEnabled = false;
 }
 
